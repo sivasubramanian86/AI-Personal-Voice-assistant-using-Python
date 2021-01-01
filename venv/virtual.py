@@ -16,7 +16,7 @@ print('Loading your AI personal assistant - G One')
 
 engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')
-engine.setProperty('voice','voices[0].id')
+engine.setProperty('voice',voices[0].id)
 
 
 def speak(text):
@@ -43,7 +43,7 @@ def takeCommand():
 
         try:
             statement=r.recognize_google(audio,language='en-in')
-            print(f"user said:{statement}\n")
+            print("User said:{statement}\n")
 
         except Exception as e:
             speak("Pardon me, please say that again")
